@@ -45,7 +45,7 @@ var ControlledInput = React.createClass({
                 <input value={this.state.fname} onChange={this.fnameChange} /> <br/><br/>
                 Enter the last name here :-&nbsp;
                 <input value={this.state.lname} onChange={this.lnameChange} /> <br/><br/>
-				<button onClick={this.submit}>Submit</button>&nbsp;
+                <button onClick={this.submit}>Submit</button>&nbsp;
                 <button onClick={this.reset}>Reset</button>
             </div>
 		);
