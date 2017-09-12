@@ -16,7 +16,7 @@ var ControlledInput = React.createClass({
     },
 
     submit: function() {
-		console.log(this.state.value);
+        console.log(this.state.value);
         this.setState({
             value: ""
         });
