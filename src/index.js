@@ -2,29 +2,39 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// eslint-disable-next-line
 var ControlledInput = React.createClass({
     getInitialState: function() {
         return {
-            value: ""
+            fname: "",
+            lname: ""
         };
     },
 
-    handleChange: function(evt) {
+    fnameChange: function(evt) {
         this.setState({
-            value: evt.target.value
+            fname: evt.target.value
+        });
+    },
+
+    lnameChange: function(evt) {
+        this.setState({
+            lname: evt.target.value
         });
     },
 
     submit: function() {
-        console.log(this.state.value);
+        console.log(this.state.fname, this.state.lname);
         this.setState({
-            value: ""
+            fname: "",
+            lname: ""
         });
 	},
 
     reset: function() {
         this.setState({
-            value: ""
+            fname: "",
+            lname: ""
         });
     },
 
@@ -32,7 +42,9 @@ var ControlledInput = React.createClass({
         return (
             <div>
                 Enter the name here :-&nbsp;
-                <input value={this.state.value} onChange={this.handleChange} /> <br/><br/>
+                <input value={this.state.fname} onChange={this.fnameChange} /> <br/><br/>
+                Enter the last name here :-&nbsp;
+                <input value={this.state.lname} onChange={this.lnameChange} /> <br/><br/>
 				<button onClick={this.submit}>Submit</button>&nbsp;
                 <button onClick={this.reset}>Reset</button>
             </div>
@@ -40,5 +52,4 @@ var ControlledInput = React.createClass({
     }
 });
 
-ReactDOM.render(<div><ControlledInput /></div>,
-document.getElementById("container"));
+ReactDOM.render(<div><ControlledInput /></div>, document.getElementById("container"));
