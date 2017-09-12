@@ -48,7 +48,7 @@ var ControlledInput = React.createClass({
                 <button onClick={this.submit}>Submit</button>&nbsp;
                 <button onClick={this.reset}>Reset</button>
             </div>
-		);
+        );
     }
 });
 
