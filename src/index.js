@@ -2,54 +2,62 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-// eslint-disable-next-line
-var ControlledInput = React.createClass({
-    getInitialState: function() {
-        return {
-            fname: "",
-            lname: ""
-        };
-    },
+class ControlledInput extends React.Component{
+    state = {
+        fname: "",
+        lname: "",
+        uname: ""
+    }
 
-    fnameChange: function(evt) {
+    fnameChange = (evt) => {
         this.setState({
             fname: evt.target.value
         });
-    },
+    }
 
-    lnameChange: function(evt) {
+    lnameChange = (evt) => {
         this.setState({
             lname: evt.target.value
         });
-    },
+    }
 
-    submit: function() {
-        console.log(this.state.fname, this.state.lname);
+    unameChange = (evt) => {
+        this.setState({
+            uname: evt.target.value
+        });
+    }
+
+    submit = () => {
+        console.log(this.state.fname, this.state.lname, this.state.uname);
         this.setState({
             fname: "",
-            lname: ""
+            lname: "",
+            uname: ""
         });
-	},
+	}
 
-    reset: function() {
+    reset = () => {
         this.setState({
             fname: "",
-            lname: ""
+            lname: "",
+            uname: ""
         });
-    },
+    }
 
-    render: function() {
+    render() {
         return (
             <div>
-                Enter the name here :-&nbsp;
+                Enter the first name here :-&nbsp;
                 <input value={this.state.fname} onChange={this.fnameChange} /> <br/><br/>
                 Enter the last name here :-&nbsp;
                 <input value={this.state.lname} onChange={this.lnameChange} /> <br/><br/>
+                Enter the user name here :-&nbsp;
+                <input value={this.state.uname} onChange={this.unameChange} /> <br/><br/>
                 <button onClick={this.submit}>Submit</button>&nbsp;
                 <button onClick={this.reset}>Reset</button>
             </div>
         );
     }
-});
+}
 
 ReactDOM.render(<div><ControlledInput /></div>, document.getElementById("container"));
