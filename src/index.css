@@ -1,5 +1,16 @@
 body {
-  margin: 20;
-  padding: 20;
-  font-family: sans-serif;
+    margin: 20;
+    padding: 20;
+    font-family: sans-serif;
+}
+
+.controlled-input {
+	padding: 20;
+    border-style:solid;
+    border-color:black;
+	border-width: 5px;
+	width: 800px;
+	height: 400px;
+	margin: 0 auto 0 auto;
+	background-color: #eee;
 }

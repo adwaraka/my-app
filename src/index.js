@@ -46,18 +46,25 @@ class ControlledInput extends React.Component{
 
     render() {
         return (
-            <div>
-                Enter the first name here :-&nbsp;
+            <div className="form">
+                <br />
+				<h1>&nbsp;ONLINE FORM</h1>
+                &nbsp;Enter the first name here:-&nbsp;
                 <input value={this.state.fname} onChange={this.fnameChange} /> <br/><br/>
-                Enter the last name here :-&nbsp;
+                &nbsp;Enter the last name here:-&nbsp;
                 <input value={this.state.lname} onChange={this.lnameChange} /> <br/><br/>
-                Enter the user name here :-&nbsp;
+                &nbsp;Enter the user name here:-&nbsp;
                 <input value={this.state.uname} onChange={this.unameChange} /> <br/><br/>
-                <button onClick={this.submit}>Submit</button>&nbsp;
-                <button onClick={this.reset}>Reset</button>
+				<div className="button">
+				    &nbsp;
+                    <button onClick={this.submit}>Submit</button>
+				    &nbsp;
+                    <button onClick={this.reset}>Reset</button>
+                </div>
+				<br />
             </div>
         );
     }
 }
 
-ReactDOM.render(<div><ControlledInput /></div>, document.getElementById("container"));
+ReactDOM.render(<div className="controlled-input"><ControlledInput /></div>, document.getElementById("container"));
