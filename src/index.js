@@ -34,7 +34,7 @@ class ControlledInput extends React.Component{
             lname: "",
             uname: ""
         });
-	}
+    }
 
     reset = () => {
         this.setState({
@@ -48,20 +48,20 @@ class ControlledInput extends React.Component{
         return (
             <div className="form">
                 <br />
-				<h1>&nbsp;ONLINE FORM</h1>
+                <h1>&nbsp;ONLINE FORM</h1>
                 &nbsp;Enter the first name here:-&nbsp;
                 <input value={this.state.fname} onChange={this.fnameChange} /> <br/><br/>
                 &nbsp;Enter the last name here:-&nbsp;
                 <input value={this.state.lname} onChange={this.lnameChange} /> <br/><br/>
                 &nbsp;Enter the user name here:-&nbsp;
                 <input value={this.state.uname} onChange={this.unameChange} /> <br/><br/>
-				<div className="button">
-				    &nbsp;
+                <div className="button">
+                    &nbsp;
                     <button onClick={this.submit}>Submit</button>
-				    &nbsp;
+                    &nbsp;
                     <button onClick={this.reset}>Reset</button>
                 </div>
-				<br />
+                <br />
             </div>
         );
     }
