@@ -5,12 +5,12 @@ body {
 }
 
 .controlled-input {
-	padding: 20;
+    padding: 20;
     border-style:solid;
     border-color:black;
-	border-width: 5px;
-	width: 800px;
-	height: 400px;
-	margin: 0 auto 0 auto;
-	background-color: #eee;
+    border-width: 5px;
+    width: 800px;
+    height: 400px;
+    margin: 0 auto 0 auto;
+    background-color: #eee;
 }
