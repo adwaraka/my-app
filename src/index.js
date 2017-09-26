@@ -6,7 +6,8 @@ class ControlledInput extends React.Component{
     state = {
         fname: "",
         lname: "",
-        uname: ""
+        uname: "",
+        pword: ""
     }
 
     fnameChange = (evt) => {
@@ -27,12 +28,19 @@ class ControlledInput extends React.Component{
         });
     }
 
+    pwordChange = (evt) => {
+        this.setState({
+            pword: evt.target.value
+        });
+    }
+
     submit = () => {
-        console.log(this.state.fname, this.state.lname, this.state.uname);
+        console.log(this.state.fname, this.state.lname, this.state.uname, this.state.pword);
         this.setState({
             fname: "",
             lname: "",
-            uname: ""
+            uname: "",
+            pword: ""
         });
     }
 
@@ -40,7 +48,8 @@ class ControlledInput extends React.Component{
         this.setState({
             fname: "",
             lname: "",
-            uname: ""
+            uname: "",
+            pword: ""
         });
     }
 
@@ -48,18 +57,22 @@ class ControlledInput extends React.Component{
         return (
             <div className="form">
                 <br />
-                <h1>&nbsp;ONLINE FORM</h1>
-                &nbsp;Enter the first name here:-&nbsp;
-                <input value={this.state.fname} onChange={this.fnameChange} /> <br/><br/>
-                &nbsp;Enter the last name here:-&nbsp;
-                <input value={this.state.lname} onChange={this.lnameChange} /> <br/><br/>
-                &nbsp;Enter the user name here:-&nbsp;
-                <input value={this.state.uname} onChange={this.unameChange} /> <br/><br/>
+                <h1>&nbsp;<u>ONLINE FORM</u></h1>
+                &nbsp;Enter the first name here &nbsp;
+                <p>&nbsp;<input value={this.state.fname} onChange={this.fnameChange} /> <br/><br/></p>
+                &nbsp;Enter the last name here &nbsp;
+                <p>&nbsp;<input value={this.state.lname} onChange={this.lnameChange} /> <br/><br/></p>
+                &nbsp;Enter the user name here &nbsp;
+                <p>&nbsp;<input value={this.state.uname} onChange={this.unameChange} /> <br/><br/></p>
+                &nbsp;Enter your password here &nbsp;
+                <p>&nbsp;<input type="password" value={this.state.pword} onChange={this.pwordChange} /> <br/><br/></p>
                 <div className="button">
-                    &nbsp;
-                    <button onClick={this.submit}>Submit</button>
-                    &nbsp;
-                    <button onClick={this.reset}>Reset</button>
+				    <p>
+                        &nbsp;
+                        <button onClick={this.submit}>Submit</button>
+                        &nbsp;
+                        <button onClick={this.reset}>Reset</button>
+					</p>
                 </div>
                 <br />
             </div>
