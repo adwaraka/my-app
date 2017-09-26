@@ -67,12 +67,12 @@ class ControlledInput extends React.Component{
                 &nbsp;Enter your password here &nbsp;
                 <p>&nbsp;<input type="password" value={this.state.pword} onChange={this.pwordChange} /> <br/><br/></p>
                 <div className="button">
-				    <p>
+                    <p>
                         &nbsp;
                         <button onClick={this.submit}>Submit</button>
                         &nbsp;
                         <button onClick={this.reset}>Reset</button>
-					</p>
+                    </p>
                 </div>
                 <br />
             </div>
