@@ -35,7 +35,13 @@ class ControlledInput extends React.Component{
     }
 
     submit = () => {
-        console.log(this.state.fname, this.state.lname, this.state.uname, this.state.pword);
+        var obj = {};
+        obj.fname = this.state.fname;
+        obj.lname = this.state.lname;
+		obj.uname = this.state.uname;
+        obj.password = this.state.pword;
+		var jsonString= JSON.stringify(obj);
+		console.log(jsonString);
         this.setState({
             fname: "",
             lname: "",
