@@ -38,16 +38,28 @@ class ControlledInput extends React.Component{
         var obj = {};
         obj.fname = this.state.fname;
         obj.lname = this.state.lname;
-		obj.uname = this.state.uname;
+        obj.uname = this.state.uname;
         obj.password = this.state.pword;
-		var jsonString= JSON.stringify(obj);
-		console.log(jsonString);
-        this.setState({
-            fname: "",
-            lname: "",
-            uname: "",
-            pword: ""
-        });
+        var jsonString= JSON.stringify(obj);
+        //console.log(jsonString);
+        return fetch("http://127.0.0.1:3001", {
+            method: "POST",
+            mode: "no-cors",
+            body: jsonString,
+            headers: {
+                'Content-Type': "application/json"
+            }
+        })
+        .then(res => {
+            this.setState({
+                fname: "",
+                lname: "",
+                uname: "",
+                pword: ""
+            });
+            return res;
+        })
+        .catch(err => err);
     }
 
     reset = () => {
