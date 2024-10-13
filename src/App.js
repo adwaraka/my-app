@@ -42,6 +42,7 @@ function App() {
                         placeholder="Enter the github username"
                         required
                     />
+                    <br/>
                     <label htmlFor="repo">The Repo Name*</label>
                     <input
                         type="text"
@@ -54,6 +55,7 @@ function App() {
                         placeholder="Enter the repository name"
                         required
                     />
+                    <br/>
 
                     <button
                         type="reset"
@@ -70,6 +72,7 @@ function App() {
                         Submit
                     </button>
 
+                    <br/>
                     <label htmlFor="commit">Commit Log</label>
                     <textarea
                         name="commit"
@@ -77,7 +80,7 @@ function App() {
                         cols="30"
                         rows="50"
                         disabled="True"
-                        placeholder="Request change logs are displayed here..."
+                        placeholder="Requested change logs are displayed here..."
                         required
                     ></textarea>
                 </form>
