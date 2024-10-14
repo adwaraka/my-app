@@ -8,12 +8,20 @@ function App() {
     const [repo, setRepo] = useState("");
     const [commitLog, setCommitLog] = useState("");
 
+    const fetchData = async () => {
+        try{
+            const response = await fetch(
+                `http://localhost:5000/parameters?user=${user}&repo=${repo}`);
+            const jsonData = await response.json();
+            setCommitLog(jsonData["logs"]);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(
-          user,
-          repo,
-        );
+        fetchData();
     };
 
     const handleReset = () => {
@@ -82,6 +90,7 @@ function App() {
                         disabled="True"
                         placeholder="Requested change logs are displayed here..."
                         required
+                        value={commitLog}
                     ></textarea>
                 </form>
             </fieldset>
